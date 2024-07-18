@@ -62,3 +62,7 @@ const countOccurrences = (str) => {
   }
   return counter;
 };
+const numbers = [1210, 2020, 3211000, 42101000];
+numbers.forEach((num) => {
+  console.log(`${num} is autobiographical: ${isAutobiographical(num)}`);
+});
