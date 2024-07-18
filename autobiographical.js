@@ -35,12 +35,30 @@ n is always >= 0 and is always an integer.*/
 //8.call the function
 
 function isAutobiographical(n) {
-  let intArray = [521000001, 2000123];
-  let string = intArray.toString();
+  //converting the integers into a string
+  const str = n.toString();
+  //Checking if the length of the string is greater than 10; if so, return false.
+  if (str.length > 10) return false;
+  //Counting the occurrences of each digit (0-9).
+  const count = countOccurrences(str);
 
-  if (string.length > 10) return false;
-
-  for (let i = 0; i < string.length; i++) {}
-
+  //check if the number is autobiographical
+  for (let i = 0; i < str.length; i++) {
+    if ((count[i] || 0) !== parseInt(str[i])) {
+      return false;
+    }
+  }
   return true;
 }
+const countOccurrences = (str) => {
+  const counter = {};
+  for (let i = 0; i < str.length; i++) {
+    let digit = str[i];
+    if (digit in counter) {
+      counter[digit] += 1;
+    } else {
+      counter[digit] = 1;
+    }
+  }
+  return counter;
+};

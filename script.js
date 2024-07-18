@@ -73,10 +73,4 @@
 function myName(name) {
   console.log(name);
 }
-const name1 = "james";
-const name2 = "trance";
-const name3 = "Trey";
-
-myName(name1);
-myName(name2);
-myName(name3);
+myName("James, trent");
